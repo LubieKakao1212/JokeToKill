@@ -10,11 +10,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using nkast.Aether.Physics2D.Dynamics;
 
-namespace Template
+namespace JokeToKill
 {
-    public class TemplateGame : Game
+    public class JokeGame : Game
     {
-        private int ScreenWidth = 1204;
+        private int ScreenWidth = 1024;
         private int ScreenHeight = 1024;
 
         private RenderPipeline RenderPipeline;
@@ -25,7 +25,7 @@ namespace Template
         private World PhysicsWorld;
         private InputManager InputManager;
 
-        public TemplateGame()
+        public JokeGame()
         {
             var _graphics = new GraphicsDeviceManager(this);
 
