@@ -1,12 +1,13 @@
 ﻿using Custom2d_Engine.Input;
 using Custom2d_Engine.Rendering;
+using Custom2d_Engine.Rendering.Sprites;
 using Custom2d_Engine.Rendering.Sprites.Atlas;
 using Custom2d_Engine.Scenes;
+using Custom2d_Engine.Scenes.Drawable;
 using Custom2d_Engine.Scenes.Events;
 using Custom2d_Engine.Ticking;
 using Custom2d_Engine.TMX;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using nkast.Aether.Physics2D.Dynamics;
 
@@ -15,7 +16,7 @@ namespace JokeToKill
     public class JokeGame : Game
     {
         private int ScreenWidth = 1024;
-        private int ScreenHeight = 1024;
+        private int ScreenHeight = 768;
 
         private RenderPipeline RenderPipeline;
         private SpriteAtlas<Color> SpriteAtlas;
@@ -56,6 +57,7 @@ namespace JokeToKill
         private void InitSystems()
         {
             Effects.Init(Content);
+            Effects.Default.CurrentTechnique = Effects.Default.Techniques["Lit"];
             RenderPipeline = new RenderPipeline();
             RenderPipeline.Init(GraphicsDevice, ScreenWidth, ScreenHeight);
             TickManager = new TickManager();
@@ -94,6 +96,12 @@ namespace JokeToKill
         {
             MainHierarchy = new Hierarchy(TickManager);
             Camera = new Camera();
+            Camera.ViewSize = 5f;
+            Camera.AspectRatio = ScreenWidth / (float)ScreenHeight;
+
+            var DO = new DrawableObject(Color.White, 0f);
+            DO.Sprite = Sprite.Unlit;
+            MainHierarchy.AddObject(DO);
 
             MainHierarchy.AddObject(Camera);
         }
@@ -120,7 +128,7 @@ namespace JokeToKill
 
         protected override void Draw(GameTime gameTime)
         {
-            RenderPipeline.RenderScene(MainHierarchy, Camera, Color.Aqua);
+            RenderPipeline.RenderScene(MainHierarchy, Camera, Color.DarkGray);
 
             base.Draw(gameTime);
         }
