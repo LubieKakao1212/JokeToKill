@@ -4,19 +4,24 @@ using Custom2d_Engine.Rendering.Sprites;
 using Custom2d_Engine.Rendering.Sprites.Atlas;
 using Custom2d_Engine.Scenes;
 using Custom2d_Engine.Scenes.Drawable;
+using Custom2d_Engine.Scenes.Drawable.Lights;
 using Custom2d_Engine.Scenes.Events;
 using Custom2d_Engine.Ticking;
 using Custom2d_Engine.TMX;
+using Custom2d_Engine.Util;
+using JokeToKill.Cards;
+using JokeToKill.Combat;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using nkast.Aether.Physics2D.Dynamics;
+using System;
 
 namespace JokeToKill
 {
     public class JokeGame : Game
     {
-        private int ScreenWidth = 1024;
-        private int ScreenHeight = 768;
+        public const int ScreenWidth = 1024;
+        public const int ScreenHeight = 768;
 
         private RenderPipeline RenderPipeline;
         private SpriteAtlas<Color> SpriteAtlas;
@@ -67,9 +72,13 @@ namespace JokeToKill
         private void LoadSprites()
         {
             SpriteAtlas = new SpriteAtlas<Color>(GraphicsDevice, 2048, 2);
+            SpriteAtlas.SetBaseColor(0, Color.Black);
+            SpriteAtlas.SetBaseColor(1, new Color(128, 128, 255));
             var Loader = new SpriteAtlasLoader<Color>(Content, SpriteAtlas, "albedo", "normal", "emit");
 
             // Load Sprites Here
+            Sprites.Init(Content, Loader);
+            Aspects.Init();
 
             LoadTMX(Loader);
 
@@ -98,12 +107,12 @@ namespace JokeToKill
             Camera = new Camera();
             Camera.ViewSize = 5f;
             Camera.AspectRatio = ScreenWidth / (float)ScreenHeight;
-
-            var DO = new DrawableObject(Color.White, 0f);
-            DO.Sprite = Sprite.Unlit;
-            MainHierarchy.AddObject(DO);
-
+            
             MainHierarchy.AddObject(Camera);
+
+            var card = new CardObject(RenderPipeline, 0f);
+            card.CurrentCard = new Card("Lorem ipsum dolor sit amet,\n consectetur adipiscing elit.\n Etiam a sapien vestibulum,\n dictum metus a, aliquet lacus.\n Sed auctor nisl non felis ultricies,\n nec iaculis sapien viverra.\n Nam nec neque eu ex.\n ", Sprite.Empty, Aspects.Dad);
+            MainHierarchy.AddObject(card);
         }
 
         protected override void Update(GameTime gameTime)
