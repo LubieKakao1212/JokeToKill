@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template", "Template\Template.csproj", "{27E1B53D-1E7E-4DB1-80FB-27FB4B00C349}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom2d_Engine", "Custom2D-Engine\Custom2d_Engine\Custom2d_Engine.csproj", "{6C2C87BB-0D6A-40DF-AD56-6BA8A983CBAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom2d_Engine.FMOD_Audio", "Custom2D-Engine\Custom2d_Engine.FMOD\Custom2d_Engine.FMOD_Audio.csproj", "{1C16CC8A-ADBF-4AD1-8D15-9679A8AAEF8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom2d_Engine.Physics", "Custom2D-Engine\Custom2d_Engine.Physics\Custom2d_Engine.Physics.csproj", "{D8C472EC-5110-4165-A968-38E7D64CDE7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom2d_Engine.TMX", "Custom2D-Engine\Custom2d_Engine.TMX\Custom2d_Engine.TMX.csproj", "{9FEDDBDC-0FF9-4F85-A2E8-02EA07C079F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27E1B53D-1E7E-4DB1-80FB-27FB4B00C349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E1B53D-1E7E-4DB1-80FB-27FB4B00C349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E1B53D-1E7E-4DB1-80FB-27FB4B00C349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E1B53D-1E7E-4DB1-80FB-27FB4B00C349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2C87BB-0D6A-40DF-AD56-6BA8A983CBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2C87BB-0D6A-40DF-AD56-6BA8A983CBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2C87BB-0D6A-40DF-AD56-6BA8A983CBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2C87BB-0D6A-40DF-AD56-6BA8A983CBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C16CC8A-ADBF-4AD1-8D15-9679A8AAEF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C16CC8A-ADBF-4AD1-8D15-9679A8AAEF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C16CC8A-ADBF-4AD1-8D15-9679A8AAEF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C16CC8A-ADBF-4AD1-8D15-9679A8AAEF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C472EC-5110-4165-A968-38E7D64CDE7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C472EC-5110-4165-A968-38E7D64CDE7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C472EC-5110-4165-A968-38E7D64CDE7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C472EC-5110-4165-A968-38E7D64CDE7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEDDBDC-0FF9-4F85-A2E8-02EA07C079F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEDDBDC-0FF9-4F85-A2E8-02EA07C079F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEDDBDC-0FF9-4F85-A2E8-02EA07C079F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEDDBDC-0FF9-4F85-A2E8-02EA07C079F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F77B874E-ACBB-4468-BAA2-42A59596C643}
+	EndGlobalSection
+EndGlobal

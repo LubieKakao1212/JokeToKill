@@ -1,0 +1,39 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ../../Custom2D-Engine/Shaders/Default.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../Custom2D-Engine/Shaders/Default.fx;Default.fx
+
+#begin ../../Custom2D-Engine/Shaders/Lights/GlobalLight.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../Custom2D-Engine/Shaders/Lights/GlobalLight.fx;Lights/GlobalLight.fx
+
+#begin ../../Custom2D-Engine/Shaders/RawTex.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../Custom2D-Engine/Shaders/RawTex.fx;RawTex.fx
+
+#begin ../../Custom2D-Engine/Shaders/Tilemap.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../Custom2D-Engine/Shaders/Tilemap.fx;Tilemap.fx
+
