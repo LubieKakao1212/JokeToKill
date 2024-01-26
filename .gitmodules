@@ -1,0 +1,4 @@
+[submodule "Custom2D-Engine"]
+	path = Custom2D-Engine
+	url = https://github.com/LubieKakao1212/Custom2D-Engine.git
+	branch = dev
