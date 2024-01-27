@@ -131,11 +131,7 @@ namespace JokeToKill
             cards.DrawHand();
             MainHierarchy.AddObject(cards);
 
-            var minotaur = new DrawableObject(Color.White, 0f);
-            minotaur.Transform.GlobalPosition = new Vector2(3f, 3f);
-            minotaur.Transform.LocalScale = Sprites.GetSpriteSize(Sprites.MonsterMinotaur[0]) * 2f;
-            MainHierarchy.AddObject(minotaur);
-            minotaur.AnimateUnsynced(Sprites.MonsterMinotaur, 0.1f);
+            CombatManager.InitCM(MainHierarchy);
         }
 
         protected override void Update(GameTime gameTime)

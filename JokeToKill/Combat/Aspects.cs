@@ -6,14 +6,18 @@ namespace JokeToKill.Combat
     public static class Aspects
     {
         public static Aspect NULL { get; private set; }
-        public static Aspect Dad { get; private set; }
-        public static Aspect Sad { get; private set; }
+        public static Aspect Daddy { get; private set; }
+        public static Aspect YoMama { get; private set; }
+        public static Aspect Soviet { get; private set; }
+        public static Aspect Pun { get; private set; }
 
         public static void Init() 
         {
-            NULL = new Aspect(Sprite.Empty, Color.White);
-            Dad = new Aspect(Sprites.AspectDad, Color.White);
-            Sad = new Aspect(Sprites.AspectDad, Color.DarkRed);
+            NULL = new Aspect(Sprite.Empty, Color.Pink);
+            Daddy = new Aspect(Sprites.AspectDad, Color.Yellow);
+            YoMama = new Aspect(Sprites.AspectDad, Color.LightBlue);
+            Soviet = new Aspect(Sprites.AspectDad, Color.Red);
+            Pun = new Aspect(Sprites.AspectDad, Color.DarkGreen);
         }
     }
 

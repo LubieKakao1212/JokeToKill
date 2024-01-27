@@ -16,7 +16,10 @@ namespace JokeToKill
         
         public static readonly Vector2 CardSize = new Vector2(GetPart(CamSize * Aspect, CardCount, 0.1f), GetPart(CamSize, 3, 0f));
 
-        public const float CardDrawOrder = 0f;
+        public const float CardDrawOrder = 1f;
+
+        public const int MonsterAspects = 2;
+        public const int CardAspects = 2;
 
         private static float GetPart(float total, int count, float spacing)
         {
