@@ -47,7 +47,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../Graphics/Card_Placeholder.png;Sprites/CardBG/emit.png
+/build:../../Graphics/Card_Placeholder.png;Sprites/Cards/CardBG/emit.png
 
 #begin CardsFont.spritefont
 /importer:FontDescriptionImporter

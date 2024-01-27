@@ -17,10 +17,10 @@ namespace JokeToKill
         private const string CardFontFile = "CardsFont";
 
         public static Sprite CardBG { get; private set; }
-        private const string CardBGFile = "Sprites/CardBG";
+        private const string CardBGFile = "Sprites/Cards/CardBG";
 
         public static Sprite AspectDad { get; private set; }
-        private const string AspectDadFile = "Sprites/Aspects/Dad";
+        private const string AspectDadFile = "Sprites/Cards/Aspects/Dad";
         
         public static void Init(ContentManager content, SpriteAtlasLoader<Color> Loader)
         {
@@ -33,7 +33,7 @@ namespace JokeToKill
         public static Vector2 GetSpriteSize(Sprite sprite)
         {
             var pixel = Sprite.Empty.TextureRect.Width;
-            return new Vector2(sprite.TextureRect.X / pixel, sprite.TextureRect.Y / pixel) * Constants.Pixel;
+            return new Vector2(sprite.TextureRect.Width / pixel, sprite.TextureRect.Height / pixel) * Constants.Pixel;
         }
 
     }

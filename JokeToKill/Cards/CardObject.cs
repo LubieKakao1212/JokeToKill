@@ -91,6 +91,7 @@ namespace JokeToKill.Cards
             {
                 desc.Text = "";
                 foreground.Sprite = Sprite.Empty;
+                ClearAspects();
             }  
             this.currentCard = card;
         }
@@ -130,6 +131,10 @@ namespace JokeToKill.Cards
             descBG.Color = Color.Gray * Fade;
             foreground.Color = Color.White * Fade;
             desc.Color = new Color(0xff101010) * Fade;
+            for (int i = 0; i < 3; i++) 
+            {
+                aspects[i].Color = Color.White * Fade;
+            }
         }
     }
 }

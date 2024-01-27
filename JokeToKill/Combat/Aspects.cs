@@ -23,7 +23,7 @@ namespace JokeToKill.Combat
 
         public Aspect(Sprite icon, Color tint) 
         {
-            this.Icon = Icon;
+            this.Icon = icon;
             this.Tint = tint;
         }
     }

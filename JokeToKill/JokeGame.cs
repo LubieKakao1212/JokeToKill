@@ -111,7 +111,9 @@ namespace JokeToKill
             MainHierarchy.AddObject(Camera);
 
             var card = new CardObject(RenderPipeline, 0f);
-            card.CurrentCard = new Card("Lorem ipsum dolor sit amet,\n consectetur adipiscing elit.\n Etiam a sapien vestibulum,\n dictum metus a, aliquet lacus.\n Sed auctor nisl non felis ultricies,\n nec iaculis sapien viverra.\n Nam nec neque eu ex.\n ", Sprite.Empty, Aspects.Dad);
+            card.CurrentCard = new Card("Lorem ipsum dolor sit amet,\n consectetur adipiscing elit.\n Etiam a sapien vestibulum,\n dictum metus a, aliquet lacus.\n Sed auctor nisl non felis ultricies,\n nec iaculis sapien viverra.\n Nam nec neque eu ex.\n ", 
+                Sprite.Empty, Aspects.Dad);
+            card.Fade = 1f;
             MainHierarchy.AddObject(card);
         }
 
