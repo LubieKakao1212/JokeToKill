@@ -63,6 +63,7 @@ namespace JokeToKill.Cards
                     localScale: new Vector2(1f));
             }
 
+            SetDrawOrder(drawOrder);
             SetCard(null);
         }
 
@@ -122,6 +123,18 @@ namespace JokeToKill.Cards
                 {
                     SetAspect(i, Aspects.NULL);
                 }
+            }
+        }
+
+        public void SetDrawOrder(float drawOrder)
+        {
+            background.DrawOrder = drawOrder;
+            foreground.DrawOrder = drawOrder;// + 0.01f;
+            descBG.DrawOrder = drawOrder;// + 0.01f;
+            desc.DrawOrder = drawOrder;// + 0.02f;
+            foreach (var aspect in aspects)
+            {
+                aspect.DrawOrder = drawOrder;// + 0.01f;
             }
         }
 

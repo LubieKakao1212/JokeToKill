@@ -1,5 +1,6 @@
 ﻿using Custom2d_Engine.Input;
 using Custom2d_Engine.Scenes;
+using Custom2d_Engine.Scenes.Events;
 using Microsoft.Xna.Framework;
 using System;
 
@@ -9,6 +10,7 @@ namespace JokeToKill.Util
     {
         private Camera camera;
         public HierarchyObject AttachedObject { get; private set; }
+
         private bool HadParent;
 
         public DDObject(InputManager input, Camera camera)
@@ -32,14 +34,14 @@ namespace JokeToKill.Util
             {
                 throw new Exception("Invalid Object");
             }
-
             var pos = obj.Transform.LocalPosition;
             var thisPos = Transform.LocalPosition;
 
             HadParent = obj.Parent != null;
             this.AttachedObject = obj;
             obj.Parent = this;
-            obj.Transform.LocalPosition = pos - thisPos;
+            var localPos = pos - thisPos;
+            obj.Transform.LocalPosition = localPos;
         }
 
         public HierarchyObject Detach()
@@ -64,6 +66,5 @@ namespace JokeToKill.Util
             AttachedObject = null;
             return obj;
         }
-
     }
 }

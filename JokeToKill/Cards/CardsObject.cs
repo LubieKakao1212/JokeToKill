@@ -15,6 +15,7 @@ namespace JokeToKill.Cards
     public class CardsObject : HierarchyObject
     {
         private CardObject[] cards = new CardObject[Constants.CardCount];
+        private SoftMoveObject[] cardMovers = new SoftMoveObject[Constants.CardCount];
         private DDObject dragger;
         private Camera camera;
         private InputManager inputManager;
@@ -31,6 +32,8 @@ namespace JokeToKill.Cards
             {
                 cards[i] = new CardObject(pipeline, Constants.CardDrawOrder);
                 cards[i].Parent = this;
+                cardMovers[i] = new SoftMoveObject(cards[i]);
+                cardMovers[i].Parent = this;
             }
 
             var click = inputManager.GetMouse(MouseButton.Left);
@@ -76,11 +79,12 @@ namespace JokeToKill.Cards
 
             var pos = (i + 0.5f) * space - Constants.CamSize;
 
-            if (dragger.AttachedObject == cards[i])
+            if (dragger.AttachedObject != null)
             {
                 dragger.Detach();
             }
-            cards[i].Transform.GlobalPosition = new Vector2(pos, Constants.CardsPosY);
+            cardMovers[i].Transform.GlobalPosition = new Vector2(pos, Constants.CardsPosY);
+            //cards[i].SetDrawOrder(Constants.CardDrawOrder);
         }
 
         public void OnClick()
@@ -109,7 +113,9 @@ namespace JokeToKill.Cards
                 idx = (int)MathF.Round(zone) + Constants.CardCount / 2;
             }
 
-            dragger.Attach(cards[idx]);
+            //cards[idx].SetDrawOrder(Constants.CardDrawOrder + 1f);
+            dragger.Attach(cardMovers[idx]);
+            cardMovers[idx].Transform.LocalPosition = Vector2.Zero;
             currentIdx = idx;
         }
 
@@ -120,12 +126,13 @@ namespace JokeToKill.Cards
                 return;
             }
             var card = cards[currentIdx];
-            if (card.Transform.GlobalPosition.Y < 0f)
+            if (card.Transform.GlobalPosition.Y < -1f)
             {
                 ResetPosition(currentIdx);
             }
             else
             {
+                Console.Out.WriteLine("Played a card");
                 DrawCard(currentIdx);
                 ResetPosition(currentIdx);
             }
