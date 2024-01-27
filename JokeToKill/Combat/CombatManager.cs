@@ -22,7 +22,7 @@ namespace JokeToKill.Combat
         public static void HandleCardPlayed(Cards.Card card)
         {
             EliminateCommonAspects(card.aspects, 
-                monsterObject.monsters[monsterObject.active].aspects);
+                monsterObject.monsters[monsterObject.active].currentAspects);
         }
 
         private static void EliminateCommonAspects(Aspect[] cardA, Aspect[] monsterA)
@@ -31,11 +31,12 @@ namespace JokeToKill.Combat
             {
                 for(int j = 0; j < monsterA.Length; j++)
                 {
-                    if (cardA[i] == monsterA[j] && monsterA[j] != Aspects.NULL
-                        && cardA[i] != Aspects.NULL)
+                    if (cardA[i].Equals(monsterA[j]) && monsterA[j].Equals(Aspects.NULL)
+                        && cardA[i].Equals(Aspects.NULL))
                     {
+                        Console.Out.WriteLine("Aspect was deleted: " + monsterA[j]);
                         monsterA[j] = Aspects.NULL;
-                        Console.Out.WriteLine("Aspect was deleted");
+                        
                         break;
                     }
                 }
@@ -54,7 +55,8 @@ namespace JokeToKill.Combat
             if (isKill)
             {
                 // what to do when monster is kill
-                Console.Out.WriteLine("Monster is kill");
+                Console.Out.WriteLine("Monster " + monsterObject.monsters[monsterObject.active].name 
+                    + " is kill");
                 monsterObject.ChangeMonster(random.Next(0, 2));
             }
         }

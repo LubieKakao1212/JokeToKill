@@ -12,6 +12,7 @@ namespace JokeToKill.Combat
     {
         public String name;
         public Aspect[] aspects;
+        public Aspect[] currentAspects;
         public Custom2d_Engine.Rendering.Sprites.Sprite[] animation;
         public bool isAlive;
 
@@ -21,11 +22,12 @@ namespace JokeToKill.Combat
             this.DrawOrder = 0f;
             this.name = name;
             aspects = new Aspect[Constants.MonsterAspects];
-            CleanAspects();
-            //RandomizeAspects();
+            currentAspects = new Aspect[Constants.MonsterAspects];
+            CleanAspects(aspects);
+            CleanAspects(currentAspects);
         }
 
-        private void CleanAspects()
+        private void CleanAspects(Aspect[] aspects)
         {
             for(int i = 0; i < aspects.Length; i++)
             {
@@ -33,9 +35,18 @@ namespace JokeToKill.Combat
             }
         }
 
-        public void RandomizeAspects()
+        public void ResetCurrentAspects()
         {
+            for (int i = 0; i < aspects.Length; i++)
+            {
+                currentAspects[i] = aspects[i];
+            }
+        }
 
+        public void SetAspects(params Aspect[] aspects)
+        {
+            this.aspects = aspects;
+            ResetCurrentAspects();
         }
     }
 }

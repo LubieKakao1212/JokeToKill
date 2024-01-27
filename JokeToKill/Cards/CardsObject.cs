@@ -145,7 +145,7 @@ namespace JokeToKill.Cards
             }
             else
             {
-                Console.Out.WriteLine("Played a card");
+                //Console.Out.WriteLine("Played a card");
                 CombatManager.HandleCardPlayed(card.CurrentCard);
                 DrawCard(currentIdx);
                 ResetPosition(currentIdx, true);
