@@ -37,6 +37,18 @@
 /processorParam:DebugMode=Auto
 /build:../../Custom2D-Engine/Shaders/Tilemap.fx;Tilemap.fx
 
+#begin ../../Graphics/Card_Placeholder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../Graphics/Card_Placeholder.png;Sprites/CardBG/emit.png
+
 #begin CardsFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor

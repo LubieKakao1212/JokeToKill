@@ -58,7 +58,7 @@ namespace JokeToKill.Cards
 
             for (int i = 0; i < 3; i++)
             {
-                Aspects[i] = this.CreateDrawableChild(Sprite.Empty, 
+                aspects[i] = this.CreateDrawableChild(Sprite.Empty, 
                     localPosition: new Vector2(-cardSize.X, cardSize.Y) + offset * i, 
                     localScale: new Vector2(1f));
             }
