@@ -13,6 +13,12 @@ namespace JokeToKill
         public static SpriteFont CardFont { get; private set; }
         private const string CardFontFile = "CardsFont";
 
+        public static Sprite BagBG { get; private set; }
+        private const string BagBGFile = "Sprites/Background";
+        
+        public static Sprite BagFG { get; private set; }
+        private const string BagFGFile = "Sprites/Foreground";
+
         public static Sprite CardBG { get; private set; }
         private const string CardBGFile = "Sprites/Cards/CardBG";
 
@@ -26,6 +32,8 @@ namespace JokeToKill
         {
             CardFont = content.Load<SpriteFont>(CardFontFile);
 
+            BagBG = Loader.Load(BagBGFile)[0];
+            BagFG = Loader.Load(BagFGFile)[0];
             AspectDad = Loader.Load(AspectDadFile)[0];
             CardBG = Loader.Load(CardBGFile)[0];
             MonsterMinotaur = Loader.Load(MonseterMinotaurFile, 

@@ -120,6 +120,13 @@ namespace JokeToKill
                 LightHeight = 0f
             });
 
+            var BG = new DrawableObject(Color.White, -10f) { Sprite = Sprites.BagBG };
+            BG.Transform.LocalScale = Constants.AspectVec * Constants.CamSize;
+            var FG = new DrawableObject(Color.White, 10f) { Sprite = Sprites.BagFG };
+            FG.Transform.LocalScale = Constants.AspectVec * Constants.CamSize;
+            MainHierarchy.AddObject(BG);
+            MainHierarchy.AddObject(FG);
+
             var cards = new CardsObject(InputManager, Camera, RenderPipeline);
             cards.DrawHand();
             MainHierarchy.AddObject(cards);

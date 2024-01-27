@@ -37,6 +37,18 @@
 /processorParam:DebugMode=Auto
 /build:../../Custom2D-Engine/Shaders/Tilemap.fx;Tilemap.fx
 
+#begin ../../Graphics/Background_Bag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../Graphics/Background_Bag.png;Sprites/Background/albedo.png
+
 #begin ../../Graphics/Card_Placeholder.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -48,6 +60,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../../Graphics/Card_Placeholder.png;Sprites/Cards/CardBG/albedo.png
+
+#begin ../../Graphics/Foreground_Bag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../Graphics/Foreground_Bag.png;Sprites/Foreground/albedo.png
 
 #begin CardsFont.spritefont
 /importer:FontDescriptionImporter

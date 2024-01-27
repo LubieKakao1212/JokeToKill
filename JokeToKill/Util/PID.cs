@@ -30,6 +30,7 @@ namespace JokeToKill.Util
             {
                 derivative = (last - error) / (float)dt.TotalSeconds;
             }
+            last = error;
             value = P * error + I * integral + D * derivative;
             return value;
         }

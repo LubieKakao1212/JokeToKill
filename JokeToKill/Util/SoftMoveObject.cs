@@ -11,8 +11,9 @@ namespace JokeToKill.Util
 {
     public class SoftMoveObject : HierarchyObject, IUpdatable
     {
-        private PID Xd = new PID(0.75f, 1.5f, 0.0075f);
-        private PID Yd = new PID(0.75f, 1.5f, 0.0075f);
+        //private PID Xd = new PID(0.75f, 1.5f, 0.0075f);
+        private PID Xd = new PID(0.25f, 1.25f, 0.005f);
+        private PID Yd = new PID(0.25f, 1.25f, 0.005f);
 
         private HierarchyObject target;
 

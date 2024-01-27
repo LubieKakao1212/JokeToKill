@@ -5,7 +5,7 @@ namespace JokeToKill
 {
     public static class Constants
     {
-        public const int CardCount = 15;
+        public const int CardCount = 4;
         public const float CardsPosY = -3f;
         public const float CamSize = 5;
         public static readonly Vector2 ScreenSize = new Vector2(JokeGame.ScreenWidth, JokeGame.ScreenHeight);
