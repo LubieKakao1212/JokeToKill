@@ -12,8 +12,8 @@ namespace JokeToKill.Combat
 {
     public class MonsterObject
     {
-        public static Monster[] monsters = new Monster[2];
-        int active = 0;
+        public Monster[] monsters = new Monster[2];
+        public int active = 0;
         private Hierarchy hierarchy;
 
         public MonsterObject(Hierarchy hierarchy)
@@ -27,11 +27,13 @@ namespace JokeToKill.Combat
         public void InitMonsters()
         {
             monsters[0] = new Monster("Minotaur");
+            monsters[0].aspects[0] = Aspects.YoMama;
             monsters[0].Transform.GlobalPosition = new Vector2(3f, 3f);
             monsters[0].Transform.LocalScale = Sprites.GetSpriteSize(Sprites.MonsterMinotaur[0]) * 2f;
             monsters[0].animation = Sprites.MonsterMinotaur;
 
             monsters[1] = new Monster("Mini Minotaur");
+            monsters[1].aspects[0] = Aspects.Daddy;
             monsters[1].Transform.GlobalPosition = new Vector2(3f, 3f);
             monsters[1].Transform.LocalScale = Sprites.GetSpriteSize(Sprites.MonsterMinotaur[0]) * 1.2f;
             monsters[1].animation = Sprites.MonsterMinotaur;

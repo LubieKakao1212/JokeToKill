@@ -1,6 +1,7 @@
 ﻿using Custom2d_Engine.Input;
 using Custom2d_Engine.Rendering;
 using Custom2d_Engine.Scenes;
+using JokeToKill.Combat;
 using JokeToKill.Util;
 using Microsoft.Xna.Framework;
 using System;
@@ -145,6 +146,7 @@ namespace JokeToKill.Cards
             else
             {
                 Console.Out.WriteLine("Played a card");
+                CombatManager.HandleCardPlayed(card.CurrentCard);
                 DrawCard(currentIdx);
                 ResetPosition(currentIdx, true);
             }

@@ -21,7 +21,16 @@ namespace JokeToKill.Combat
             this.DrawOrder = 0f;
             this.name = name;
             aspects = new Aspect[Constants.MonsterAspects];
-            RandomizeAspects();
+            CleanAspects();
+            //RandomizeAspects();
+        }
+
+        private void CleanAspects()
+        {
+            for(int i = 0; i < aspects.Length; i++)
+            {
+                aspects[i] = Aspects.NULL;
+            }
         }
 
         public void RandomizeAspects()
