@@ -20,6 +20,7 @@ namespace JokeToKill.Cards
         private Camera camera;
         private InputManager inputManager;
         private int currentIdx = -1;
+        private Deck deck = new Deck(Cards.AllCards, 2);
 
         public CardsObject(InputManager inputManager, Camera camera, RenderPipeline pipeline) 
         {
@@ -34,19 +35,23 @@ namespace JokeToKill.Cards
                 cards[i].Parent = this;
                 cardMovers[i] = new SoftMoveObject(cards[i]);
                 cardMovers[i].Parent = this;
+                cardMovers[i].Speed = 0.5f;
             }
 
             var click = inputManager.GetMouse(MouseButton.Left);
             click.Started += (_) => OnClick();
             click.Canceled += (_) => OnUnclick();
 
-            ResetPositions();
+            var rc = inputManager.GetMouse(MouseButton.Right);
+            rc.Started += (_) => ResetPositions(true);
+
+            ResetPositions(true);
             DrawHand();
         }
 
         protected virtual Card GetNextCard()
         {
-            return Cards.AllCards[Random.Shared.Next(3)];
+            return deck.Get();
         }
 
         public void DrawHand()
@@ -62,15 +67,15 @@ namespace JokeToKill.Cards
             cards[i].CurrentCard = GetNextCard();
         }
 
-        private void ResetPositions()
+        private void ResetPositions(bool animateDraw)
         {
             for (int i = 0; i < cards.Length; i++) 
             {
-                ResetPosition(i);
+                ResetPosition(i, animateDraw);
             }
         }
 
-        private void ResetPosition(int i)
+        private void ResetPosition(int i, bool animateDraw)
         {
             var count = Constants.CardCount;
             var viewSize = Constants.CamSize * 2f;
@@ -83,6 +88,13 @@ namespace JokeToKill.Cards
             {
                 dragger.Detach();
             }
+
+            if (animateDraw)
+            {
+                cards[i].Transform.GlobalPosition = new Vector2(pos, Constants.CardsDrawOrigin.Y);
+                cardMovers[i].Reset();
+            }
+
             cardMovers[i].Transform.GlobalPosition = new Vector2(pos, Constants.CardsPosY);
             //cards[i].SetDrawOrder(Constants.CardDrawOrder);
         }
@@ -128,13 +140,13 @@ namespace JokeToKill.Cards
             var card = cards[currentIdx];
             if (card.Transform.GlobalPosition.Y < -1f)
             {
-                ResetPosition(currentIdx);
+                ResetPosition(currentIdx, false);
             }
             else
             {
                 Console.Out.WriteLine("Played a card");
                 DrawCard(currentIdx);
-                ResetPosition(currentIdx);
+                ResetPosition(currentIdx, true);
             }
 
             currentIdx = -1;

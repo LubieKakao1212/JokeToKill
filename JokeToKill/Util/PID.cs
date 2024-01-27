@@ -11,7 +11,6 @@ namespace JokeToKill.Util
     public class PID
     {
         private float P, I, D;
-        private float value;
         private float integral;
         private float last;
 
@@ -31,14 +30,14 @@ namespace JokeToKill.Util
                 derivative = (last - error) / (float)dt.TotalSeconds;
             }
             last = error;
-            value = P * error + I * integral + D * derivative;
+            var value = P * error + I * integral + D * derivative;
             return value;
         }
 
-        public void Reset(float value, float integral = 0f)
+        public void Reset(float integral = 0f)
         {
-            this.value = value;
             this.integral = integral;
+            this.last = 0f;
         }
     }
 }
