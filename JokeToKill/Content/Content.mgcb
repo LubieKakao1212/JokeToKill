@@ -47,7 +47,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../Graphics/Card_Placeholder.png;Sprites/Cards/CardBG/emit.png
+/build:../../Graphics/Card_Placeholder.png;Sprites/Cards/CardBG/albedo.png
 
 #begin CardsFont.spritefont
 /importer:FontDescriptionImporter
@@ -56,7 +56,7 @@
 /processorParam:TextureFormat=Compressed
 /build:CardsFont.spritefont
 
-#begin Sprites/Cards/Aspects/Dad/emit.png
+#begin Sprites/Cards/Aspects/Dad/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -66,9 +66,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/Cards/Aspects/Dad/emit.png
+/build:Sprites/Cards/Aspects/Dad/albedo.png
 
-#begin Sprites/Monsters/Mintour/emit.png
+#begin Sprites/Monsters/Minotaur/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -78,5 +78,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/Monsters/Mintour/emit.png
+/build:Sprites/Monsters/Minotaur/albedo.png
 

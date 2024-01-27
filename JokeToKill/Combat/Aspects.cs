@@ -7,11 +7,13 @@ namespace JokeToKill.Combat
     {
         public static Aspect NULL { get; private set; }
         public static Aspect Dad { get; private set; }
+        public static Aspect Sad { get; private set; }
 
         public static void Init() 
         {
             NULL = new Aspect(Sprite.Empty, Color.White);
             Dad = new Aspect(Sprites.AspectDad, Color.White);
+            Sad = new Aspect(Sprites.AspectDad, Color.DarkRed);
         }
     }
 

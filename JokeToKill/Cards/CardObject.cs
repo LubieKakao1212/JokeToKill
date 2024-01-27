@@ -24,7 +24,7 @@ namespace JokeToKill.Cards
             }
         }
 
-        public float Fade { get; set; }
+        public float Fade { get; set; } = 1f;
 
         public float Order => 0f;
 
@@ -50,16 +50,16 @@ namespace JokeToKill.Cards
 
             desc = new DrawableTextObject(pipeline, Color.White, drawOrder + 0.02f);
             desc.Font = Sprites.CardFont;
-            desc.Transform.LocalPosition = new Vector2(-1f, 1f);
+            desc.Transform.LocalPosition = new Vector2(-0.9f, 0.9f);
             desc.Parent = descBG;
 
             aspects = new DrawableObject[3];
-            var offset = new Vector2(0f, cardSize.Y / 4);
+            var offset = new Vector2(0f, -cardSize.Y / 5);
 
             for (int i = 0; i < 3; i++)
             {
                 aspects[i] = this.CreateDrawableChild(Sprite.Empty, 
-                    localPosition: new Vector2(-cardSize.X, cardSize.Y) + offset * i, 
+                    localPosition: new Vector2(-cardSize.X, cardSize.Y) + offset * (i * 2f + 2f), 
                     localScale: new Vector2(1f));
             }
 
@@ -131,9 +131,16 @@ namespace JokeToKill.Cards
             descBG.Color = Color.Gray * Fade;
             foreground.Color = Color.White * Fade;
             desc.Color = new Color(0xff101010) * Fade;
-            for (int i = 0; i < 3; i++) 
+            if (currentCard != null)
             {
-                aspects[i].Color = Color.White * Fade;
+                for (int i = 0; i < currentCard.aspects.Length; i++)
+                {
+                    if (i > 2)
+                    {
+                        break;
+                    }
+                    aspects[i].Color = currentCard.aspects[i].Tint * Fade;
+                }
             }
         }
     }

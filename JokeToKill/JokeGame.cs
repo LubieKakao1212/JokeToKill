@@ -1,4 +1,5 @@
 ﻿using Custom2d_Engine.Input;
+using Custom2d_Engine.Math;
 using Custom2d_Engine.Rendering;
 using Custom2d_Engine.Rendering.Sprites;
 using Custom2d_Engine.Rendering.Sprites.Atlas;
@@ -11,10 +12,12 @@ using Custom2d_Engine.TMX;
 using Custom2d_Engine.Util;
 using JokeToKill.Cards;
 using JokeToKill.Combat;
+using JokeToKill.Util;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using nkast.Aether.Physics2D.Dynamics;
 using System;
+using System.Collections.Generic;
 
 namespace JokeToKill
 {
@@ -73,12 +76,13 @@ namespace JokeToKill
         {
             SpriteAtlas = new SpriteAtlas<Color>(GraphicsDevice, 2048, 2);
             SpriteAtlas.SetBaseColor(0, Color.Black);
-            SpriteAtlas.SetBaseColor(1, new Color(128, 128, 255));
+            SpriteAtlas.SetBaseColor(1, new Color(128, 255, 128));
             var Loader = new SpriteAtlasLoader<Color>(Content, SpriteAtlas, "albedo", "normal", "emit");
 
             // Load Sprites Here
             Sprites.Init(Content, Loader);
             Aspects.Init();
+            Cards.Cards.Init();
 
             LoadTMX(Loader);
 
@@ -110,11 +114,21 @@ namespace JokeToKill
             
             MainHierarchy.AddObject(Camera);
 
-            var card = new CardObject(RenderPipeline, 0f);
-            card.CurrentCard = new Card("Lorem ipsum dolor sit amet,\n consectetur adipiscing elit.\n Etiam a sapien vestibulum,\n dictum metus a, aliquet lacus.\n Sed auctor nisl non felis ultricies,\n nec iaculis sapien viverra.\n Nam nec neque eu ex.\n ", 
-                Sprite.Empty, Aspects.Dad);
-            card.Fade = 1f;
-            MainHierarchy.AddObject(card);
+            MainHierarchy.AddObject(new GlobalLight(RenderPipeline, Color.White, 0f)
+            {
+                Intensity = 1f,
+                LightHeight = 0f
+            });
+
+            var cards = new CardsObject(InputManager, Camera, RenderPipeline);
+            cards.DrawHand();
+            MainHierarchy.AddObject(cards);
+
+            var minotaur = new DrawableObject(Color.White, 0f);
+            minotaur.Transform.GlobalPosition = new Vector2(3f, 3f);
+            minotaur.Transform.LocalScale = Sprites.GetSpriteSize(Sprites.MonsterMinotaur[0]) * 2f;
+            MainHierarchy.AddObject(minotaur);
+            minotaur.AnimateUnsynced(Sprites.MonsterMinotaur, 0.1f);
         }
 
         protected override void Update(GameTime gameTime)
