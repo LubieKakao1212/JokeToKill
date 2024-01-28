@@ -22,7 +22,7 @@ namespace JokeToKill
         public const float CardDrawOrder = 1f;
 
         public const int MinMonsterAspects = 2;
-        public const int MaxMonsterAspects = 2;
+        public const int MaxMonsterAspects = 5;
         public const int CardAspects = 2;
 
         private static float GetPart(float total, int count, float spacing)

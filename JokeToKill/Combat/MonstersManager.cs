@@ -47,7 +47,7 @@ namespace JokeToKill.Combat
             active = index;
             hierarchy.AddObject(monsters[active]);
             monsters[active].RandomizeAspects();
-            //monsters[active].Animate();
+            monsters[active].Animate();
             Console.Out.WriteLine("Current monster is: " + monsters[active].name);
         }
     }

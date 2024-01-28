@@ -2,6 +2,8 @@
 using Custom2d_Engine.Scenes;
 using Custom2d_Engine.Scenes.Drawable;
 using Custom2d_Engine.Scenes.Factory;
+using Custom2d_Engine.Ticking;
+using Custom2d_Engine.Util;
 using JokeToKill.Util;
 using Microsoft.Xna.Framework;
 using System;
@@ -24,7 +26,7 @@ namespace JokeToKill.Combat
 
         private DrawableObject[] aspectSprites;
 
-        public MonsterInstance(String name, Sprite[] animationFrames, params Aspect[] aspectPool)
+        public MonsterInstance(string name, Sprite[] animationFrames, params Aspect[] aspectPool)
         {
             this.name = name;
             aspects = new Aspect[Constants.MaxMonsterAspects];
@@ -36,6 +38,17 @@ namespace JokeToKill.Combat
 
             mainSprite = this.CreateDrawableChild(Sprite.Empty, localScale: size);
             mainSprite.Transform.GlobalPosition = new Vector2(Constants.MonsterFloorCenter.X, Constants.MonsterFloorCenter.Y + size.Y);
+            
+            aspectSprites = new DrawableObject[Constants.MaxMonsterAspects];
+            var offset = new Vector2(0f, -size.Y / 5);
+
+            for (int i = 0; i < aspectSprites.Length; i++)
+            {
+                aspectSprites[i] = this.CreateDrawableChild(Sprite.Empty,
+                    localPosition: new Vector2(-size.X, size.Y) + offset * (i * 2f + 2f),
+                    localScale: new Vector2(1f));
+                aspectSprites[i].Transform.GlobalPosition += mainSprite.Transform.GlobalPosition;
+            }
 
             CleanAspects();
 
@@ -60,16 +73,39 @@ namespace JokeToKill.Combat
                     break;
                 }
             }
+            SetAspects(aspects);
         }
 
         public void Animate()
         {
-            mainSprite.AnimateUnsynced(animationFrames, 0.1f);
+            var frame = new Reference<int>();
+            this.AddAccurateRepeatingAction(() =>
+            {
+                mainSprite.Sprite = animationFrames[frame.Value = (frame + 1) % animationFrames.Length];
+            }, 0.1f);
         }
 
-        protected override void RemovedFromScene()
+        private void SetAspects(Aspect[] aspects)
         {
-            base.RemovedFromScene();
+            for (int i = 0; i < this.aspects.Length; i++)
+            {
+                if (i < aspects.Length)
+                {
+                    SetAspect(i, aspects[i]);
+                }
+                else
+                {
+                    SetAspect(i, Aspects.NULL);
+                }
+            }
+        }
+
+        private void SetAspect(int i, Aspect aspect)
+        {
+            aspectSprites[i].Sprite = aspect.Icon;
+            aspectSprites[i].Color = aspect.Tint;
+            aspectSprites[i].Transform.LocalScale = Sprites.GetSpriteSize(aspect.Icon);
+            aspects[i] = aspect;
         }
     }
 }
