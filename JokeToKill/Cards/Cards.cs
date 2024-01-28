@@ -47,25 +47,25 @@ namespace JokeToKill.Cards
             Dad2 = new Card("Electric bogaloo", Sprite.Empty, Aspects.Dad, Aspects.Sad);
             Dad3 = new Card("Enigma", Sprite.Empty, Aspects.Sad);*/
 
-            DadJoke_1 = new Card("Dad1", Sprite.Empty, Aspects.Daddy);
-            DadJoke_2 = new Card("Dad2", Sprite.Empty, Aspects.Daddy);
-            DadJoke_3 = new Card("Dad3", Sprite.Empty, Aspects.Daddy);
-            DadJoke_4 = new Card("Dad4", Sprite.Empty, Aspects.Daddy);
+            DadJoke_1 = new Card("\nDad - Cliff", Sprite.Empty, Sounds.cliff, Aspects.Daddy);
+            DadJoke_2 = new Card("\nDad - 2 bee", Sprite.Empty, Sounds.bee2, Aspects.Daddy);
+            DadJoke_3 = new Card("\nDad - Water", Sprite.Empty, Sounds.water, Aspects.Daddy);
+            DadJoke_4 = new Card("\nDad - Frog", Sprite.Empty, Sounds.frog, Aspects.Daddy);
 
-            YoMama_1 = new Card("YoMama1", Sprite.Empty, Aspects.YoMama);
-            YoMama_2 = new Card("YoMama2", Sprite.Empty, Aspects.YoMama);
-            YoMama_3 = new Card("YoMama3", Sprite.Empty, Aspects.YoMama);
-            YoMama_4 = new Card("YoMama4", Sprite.Empty, Aspects.YoMama);
+            YoMama_1 = new Card("\nYoMama - Cat", Sprite.Empty, Sounds.cat_fix, Aspects.YoMama);
+            YoMama_2 = new Card("\nYoMama - Nom", Sprite.Empty, Sounds.nom, Aspects.YoMama);
+            YoMama_3 = new Card("\nYoMama - Alike", Sprite.Empty, Sounds.alike, Aspects.YoMama);
+            YoMama_4 = new Card("\nYoMama - Equality", Sprite.Empty, Sounds.equality, Aspects.YoMama);
 
-            Soviet_1 = new Card("Soviet1", Sprite.Empty, Aspects.Soviet);
-            Soviet_2 = new Card("Soviet2", Sprite.Empty, Aspects.Soviet);
-            Soviet_3 = new Card("Soviet3", Sprite.Empty, Aspects.Soviet);
-            Soviet_4 = new Card("Soviet4", Sprite.Empty, Aspects.Soviet);
+            Soviet_1 = new Card("\nSoviet - Jok", Sprite.Empty, Sounds.jok, Aspects.Soviet);
+            Soviet_2 = new Card("\nSoviet - Start", Sprite.Empty, Sounds.start, Aspects.Soviet);
+            Soviet_3 = new Card("\nSoviet - Economy", Sprite.Empty, Sounds.economy_fix, Aspects.Soviet);
+            Soviet_4 = new Card("\nSoviet - Longest", Sprite.Empty, Sounds.longest, Aspects.Soviet);
 
-            Pun_1 = new Card("Pun1", Sprite.Empty, Aspects.Pun);
-            Pun_2 = new Card("Pun2", Sprite.Empty, Aspects.Pun);
-            Pun_3 = new Card("Pun3", Sprite.Empty, Aspects.Pun);
-            Pun_4 = new Card("Pun4", Sprite.Empty, Aspects.Pun);
+            Pun_1 = new Card("\nPun - Minotaur", Sprite.Empty, Sounds.minotaur, Aspects.Pun);
+            Pun_2 = new Card("\nPun - Despair", Sprite.Empty, Sounds.thispear, Aspects.Pun);
+            Pun_3 = new Card("\nPun - Power", Sprite.Empty, Sounds.power, Aspects.Pun);
+            Pun_4 = new Card("\nPun - Wholemole", Sprite.Empty, Sounds.wholemole, Aspects.Pun);
 
             AllCards = new Card[] { 
             DadJoke_1, DadJoke_2, DadJoke_3, DadJoke_4,
