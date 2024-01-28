@@ -49,6 +49,13 @@ namespace JokeToKill
         public static Sprite[] MonsterMinotaur { get; private set; }
         private const string MonseterMinotaurFile = "Sprites/Monsters/Minotaur";
 
+        public static Sprite MonsterMinotaurDead { get; private set; }
+        private const string MonseterMinotaurDeadFile = "Sprites/Monsters/Burger";
+
+        public static Sprite MonsterCtDead { get; private set; }
+        private const string MonseterCtDeadFile = "Sprites/Monsters/Pasta";
+
+
         public static Sprite[] MonsterCthulhu { get; private set; }
         private const string MonsterCthulhuFile = "Sprites/Monsters/Cthulu";
 
@@ -73,6 +80,10 @@ namespace JokeToKill
             AspectMom = Loader.Load(AspectMomFile)[0];
             AspectPun = Loader.Load(AspectPunFile)[0];
             AspectRussia = Loader.Load(AspectRussiaFile)[0];
+
+            MonsterCtDead = Loader.Load(MonseterCtDeadFile)[0];
+            MonsterMinotaurDead = Loader.Load(MonseterMinotaurFile)[0];
+
             CardBG = Loader.Load(CardBGFile)[0];
             MonsterMinotaur = Loader.Load(MonseterMinotaurFile, 
                 ArrayExtensions.Fill(new Rectangle[8], Slice(new Point(8 * 69, 96), new Point(1, 0), 8)));

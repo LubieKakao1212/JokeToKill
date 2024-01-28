@@ -32,9 +32,9 @@ namespace JokeToKill.Combat
 
         public void InitMonsters()
         {
-            monsters[0] = new MonsterInstance("Minotaur", Sprites.MonsterMinotaur, Aspects.Daddy, Aspects.YoMama);
-            monsters[1] = new MonsterInstance("Minotaur 2", Sprites.MonsterMinotaur, Aspects.Soviet, Aspects.Pun);
-            monsters[2] = new MonsterInstance("Cthulhu", Sprites.MonsterCthulhu, Aspects.Pun);
+            monsters[0] = new MonsterInstance("Minotaur", Sprites.MonsterMinotaur, Sprites.MonsterMinotaurDead, Aspects.Daddy, Aspects.YoMama);
+            monsters[1] = new MonsterInstance("Minotaur 2", Sprites.MonsterMinotaur, Sprites.MonsterMinotaurDead, Aspects.Soviet, Aspects.Pun);
+            monsters[2] = new MonsterInstance("Cthulhu", Sprites.MonsterCthulhu, Sprites.MonsterCtDead, Aspects.Pun);
             //monsters[0].aspects[0] = Aspects.YoMama;
 
             /*monsters[1] = new Monster("Mini Minotaur", Sprites.MonsterMinotaur);
