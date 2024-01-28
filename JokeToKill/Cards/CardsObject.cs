@@ -22,6 +22,7 @@ namespace JokeToKill.Cards
         private InputManager inputManager;
         private int currentIdx = -1;
         private Deck deck = new Deck(Cards.AllCards, 2);
+        public bool Frozen;
 
         public CardsObject(InputManager inputManager, Camera camera, RenderPipeline pipeline) 
         {
@@ -102,6 +103,10 @@ namespace JokeToKill.Cards
 
         public void OnClick()
         {
+            if (Frozen)
+            {
+                return;
+            }
             var pos = camera.ScreenToWorld(inputManager.CursorPosition.GetCurrentValue<Point>());
 
             if (MathF.Abs(pos.X) > Constants.CamSize)

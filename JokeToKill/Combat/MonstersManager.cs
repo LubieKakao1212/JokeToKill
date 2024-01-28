@@ -25,6 +25,11 @@ namespace JokeToKill.Combat
             //monsters[active].AnimateUnsynced(monsters[active].animation, 0.1f);
         }
 
+        public void PlayDeath()
+        {
+            monsters[active].PlayDead();
+        }
+
         public void InitMonsters()
         {
             monsters[0] = new MonsterInstance("Minotaur", Sprites.MonsterMinotaur, Aspects.Daddy, Aspects.YoMama);

@@ -132,7 +132,7 @@ namespace JokeToKill
             cards.DrawHand();
             MainHierarchy.AddObject(cards);
 
-            CombatManager.InitCM(MainHierarchy);
+            CombatManager.InitCM(MainHierarchy, cards);
         }
 
         protected override void Update(GameTime gameTime)
