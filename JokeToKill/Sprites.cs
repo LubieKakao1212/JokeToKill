@@ -49,6 +49,16 @@ namespace JokeToKill
         public static Sprite[] MonsterMinotaur { get; private set; }
         private const string MonseterMinotaurFile = "Sprites/Monsters/Minotaur";
 
+        public static Sprite[] MonsterCthulhu { get; private set; }
+        private const string MonsterCthulhuFile = "Sprites/Monsters/Cthulu";
+
+        public static Sprite[] PlayerFull { get; private set; } // player without animations
+        public static Sprite PlayerStatic { get; private set; } // 1-6 idle, 7 attack, 8-12 hurt, w:85, h:105
+        public static Sprite[] PlayerIdle { get; private set; }
+        public static Sprite[] PlayerAttack { get; private set; }
+        public static Sprite[] PlayerHurt { get; private set; }
+        private const string PlayerFile = "Sprites/Player";
+
         public static void Init(ContentManager content, SpriteAtlasLoader<Color> Loader)
         {
             CardFont = content.Load<SpriteFont>(CardFontFile);
@@ -66,6 +76,12 @@ namespace JokeToKill
             CardBG = Loader.Load(CardBGFile)[0];
             MonsterMinotaur = Loader.Load(MonseterMinotaurFile, 
                 ArrayExtensions.Fill(new Rectangle[8], Slice(new Point(8 * 69, 96), new Point(1, 0), 8)));
+            MonsterCthulhu = Loader.Load(MonsterCthulhuFile,
+                ArrayExtensions.Fill(new Rectangle[6], Slice(new Point(6 * 57, 92), new Point(1, 0), 6)));
+            PlayerFull = Loader.Load(PlayerFile,
+                ArrayExtensions.Fill(new Rectangle[12], Slice(new Point(12 * 85, 105), new Point(1, 0), 12)));
+            PlayerStatic = PlayerFull[0];
+            PlayerIdle = new Sprite[] { PlayerFull[0], PlayerFull[1], PlayerFull[2], PlayerFull[3], PlayerFull[4], PlayerFull[5], PlayerFull[6] };
         }
 
         public static Vector2 GetSpriteSize(Sprite sprite)

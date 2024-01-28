@@ -12,7 +12,7 @@ namespace JokeToKill.Combat
 {
     public class MonstersManager
     {
-        public MonsterInstance[] monsters = new MonsterInstance[2];
+        public MonsterInstance[] monsters = new MonsterInstance[3];
         public int active = -1;
         private Hierarchy hierarchy;
 
@@ -32,8 +32,9 @@ namespace JokeToKill.Combat
 
         public void InitMonsters()
         {
-            monsters[0] = new MonsterInstance("Minotaur", Sprites.MonsterMinotaur, Sprites.CardBG ,Aspects.Daddy, Aspects.YoMama);
-            monsters[1] = new MonsterInstance("Minotaur 2", Sprites.MonsterMinotaur, Sprites.CardBG, Aspects.Soviet, Aspects.Pun);
+            monsters[0] = new MonsterInstance("Minotaur", Sprites.MonsterMinotaur, Aspects.Daddy, Aspects.YoMama);
+            monsters[1] = new MonsterInstance("Minotaur 2", Sprites.MonsterMinotaur, Aspects.Soviet, Aspects.Pun);
+            monsters[2] = new MonsterInstance("Cthulhu", Sprites.MonsterCthulhu, Aspects.Pun);
             //monsters[0].aspects[0] = Aspects.YoMama;
 
             /*monsters[1] = new Monster("Mini Minotaur", Sprites.MonsterMinotaur);

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{be379949-e2cf-417c-b7c6-d26dba758ee2}">
 		<property name="name">
-			<value>(MoM) Cat_Fix</value>
+			<value>cat_fix</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

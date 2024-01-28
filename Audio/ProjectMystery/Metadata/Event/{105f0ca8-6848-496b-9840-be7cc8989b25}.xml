@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{105f0ca8-6848-496b-9840-be7cc8989b25}">
 		<property name="name">
-			<value>(MoM) (Dad) alike</value>
+			<value>alike</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

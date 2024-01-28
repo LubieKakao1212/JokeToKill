@@ -75,7 +75,7 @@ namespace JokeToKill.Combat
             {
                 // what to do when monster is kill
                 Console.Out.WriteLine("Monster is kill");
-                monsterObject.ChangeMonster(random.Next(0, 2));
+                monsterObject.ChangeMonster(random.Next(0, Constants.MonsterCount));
                 monsterObject.PlayDeath();
 
                 return TimeSpan.FromSeconds(1f);

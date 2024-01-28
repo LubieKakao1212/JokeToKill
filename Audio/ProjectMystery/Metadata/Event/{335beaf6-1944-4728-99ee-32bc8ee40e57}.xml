@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{335beaf6-1944-4728-99ee-32bc8ee40e57}">
 		<property name="name">
-			<value>Win</value>
+			<value>win</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -90,7 +90,10 @@
 	<object class="MixerBusPanner" id="{6df3b669-e693-4265-8583-e7ffe6139747}" />
 	<object class="SingleSound" id="{961808f3-833b-4b44-a64c-18ac42e0f509}">
 		<property name="length">
-			<value>5.9733333333333336</value>
+			<value>2.4089501915708804</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>2.1995402298850579</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{2b6bc86b-8742-43c9-b01f-3818938e558f}</destination>

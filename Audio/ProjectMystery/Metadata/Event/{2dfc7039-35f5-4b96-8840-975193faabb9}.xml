@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2dfc7039-35f5-4b96-8840-975193faabb9}">
 		<property name="name">
-			<value>(Pun) Power</value>
+			<value>power</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e48f0a32-f140-42fa-b7c2-eab3ab490c33}">
 		<property name="name">
-			<value>(Mom) (Pun) sis</value>
+			<value>sis</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{590ea7de-7925-4b77-831f-41b502ed1566}">
 		<property name="name">
-			<value>(dad)(pun) 2bee</value>
+			<value>2bee</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
