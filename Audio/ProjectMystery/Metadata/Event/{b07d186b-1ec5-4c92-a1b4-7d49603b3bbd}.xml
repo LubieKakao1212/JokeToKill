@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b07d186b-1ec5-4c92-a1b4-7d49603b3bbd}">
 		<property name="name">
-			<value>(Misc) NC</value>
+			<value>nc</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

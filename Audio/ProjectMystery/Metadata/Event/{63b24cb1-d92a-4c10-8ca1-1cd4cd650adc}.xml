@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{63b24cb1-d92a-4c10-8ca1-1cd4cd650adc}">
 		<property name="name">
-			<value>(Pun) ThisPear</value>
+			<value>thispear</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
