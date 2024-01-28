@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{f75af77b-794d-4c03-899c-62226f4e93ab}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{1f450c58-ef08-4215-9a98-04c48e1a5eec}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{7d26bbb8-af68-44b2-89cc-1e59f667fb17}">
 		<relationship name="masterBus">
@@ -130,6 +133,9 @@
 	<object class="CompressorEffect" id="{eaf677de-373a-4f69-ba1f-16b2f17f1654}">
 		<property name="threshold">
 			<value>-27.5</value>
+		</property>
+		<property name="gain">
+			<value>8.5</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{e742d45d-67d8-4854-99a1-c0232e87e082}">
