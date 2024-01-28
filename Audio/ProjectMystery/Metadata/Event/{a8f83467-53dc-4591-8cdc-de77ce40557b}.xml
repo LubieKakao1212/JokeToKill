@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a8f83467-53dc-4591-8cdc-de77ce40557b}">
 		<property name="name">
-			<value>(dad) phrog</value>
+			<value>frog</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{7d6cb3c0-be06-411a-b332-14b752e8ed83}">
 		<property name="name">
-			<value>(MoM) (Zssr) (Pun) Equality</value>
+			<value>equality</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

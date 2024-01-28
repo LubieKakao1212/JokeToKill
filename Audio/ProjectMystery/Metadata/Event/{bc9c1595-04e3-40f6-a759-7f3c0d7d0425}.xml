@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{bc9c1595-04e3-40f6-a759-7f3c0d7d0425}">
 		<property name="name">
-			<value>(Zssr) Longest</value>
+			<value>longest</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3d8d300a-cee2-4937-bbe2-163821f87473}">
 		<property name="name">
-			<value>(Zssr) Economy</value>
+			<value>economy</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
