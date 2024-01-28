@@ -76,7 +76,7 @@ namespace JokeToKill
         {
             SpriteAtlas = new SpriteAtlas<Color>(GraphicsDevice, 2048, 2);
             SpriteAtlas.SetBaseColor(0, Color.Black);
-            SpriteAtlas.SetBaseColor(1, new Color(128, 255, 128));
+            SpriteAtlas.SetBaseColor(1, Color.Transparent);
             var Loader = new SpriteAtlasLoader<Color>(Content, SpriteAtlas, "albedo", "normal", "emit");
 
             // Load Sprites Here
@@ -116,16 +116,12 @@ namespace JokeToKill
 
             MainHierarchy.AddObject(new GlobalLight(RenderPipeline, Color.White, 0f)
             {
-                Intensity = 1f,
-                LightHeight = 0f
+                Intensity = 1.9f,
+                LightHeight = 10000f
             });
 
-            var BG = new DrawableObject(Color.White, -10f) { Sprite = Sprites.BagBG };
-            BG.Transform.LocalScale = Constants.AspectVec * Constants.CamSize;
-            var FG = new DrawableObject(Color.White, 10f) { Sprite = Sprites.BagFG };
-            FG.Transform.LocalScale = Constants.AspectVec * Constants.CamSize;
-            MainHierarchy.AddObject(BG);
-            MainHierarchy.AddObject(FG);
+            var scenery = new SceneryObject();
+            MainHierarchy.AddObject(scenery);
 
             var cards = new CardsObject(InputManager, Camera, RenderPipeline);
             cards.DrawHand();

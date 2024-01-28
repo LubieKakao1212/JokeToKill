@@ -13,11 +13,11 @@ namespace JokeToKill.Combat
 
         public static void Init() 
         {
-            NULL = new Aspect(Sprite.Empty, Color.Pink);
-            Daddy = new Aspect(Sprites.AspectDad, Color.Yellow);
-            YoMama = new Aspect(Sprites.AspectDad, Color.LightBlue);
-            Soviet = new Aspect(Sprites.AspectDad, Color.Red);
-            Pun = new Aspect(Sprites.AspectDad, Color.DarkGreen);
+            NULL = new Aspect(Sprite.Empty, Color.Transparent, nameof(NULL));
+            Daddy = new Aspect(Sprites.AspectDad, Color.White, nameof(Daddy));
+            YoMama = new Aspect(Sprites.AspectMom, Color.White, nameof(YoMama));
+            Soviet = new Aspect(Sprites.AspectRussia, Color.White, nameof(Soviet));
+            Pun = new Aspect(Sprites.AspectPun, Color.White, nameof(Pun));
         }
     }
 
@@ -27,10 +27,18 @@ namespace JokeToKill.Combat
 
         public Color Tint { get; private set; }
 
-        public Aspect(Sprite icon, Color tint) 
+        public string DebugName { get; private set; }
+
+        public Aspect(Sprite icon, Color tint, string debugName)
         {
             this.Icon = icon;
             this.Tint = tint;
+            this.DebugName = debugName;
+        }
+
+        public override string ToString()
+        {
+            return DebugName;
         }
     }
 }

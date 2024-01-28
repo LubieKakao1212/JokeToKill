@@ -13,17 +13,34 @@ namespace JokeToKill
         public static SpriteFont CardFont { get; private set; }
         private const string CardFontFile = "CardsFont";
 
+        public static Sprite SceneBG { get; private set; }
+        private const string SceneBGFile = "Sprites/Background/BlackStripe";
+
         public static Sprite BagBG { get; private set; }
-        private const string BagBGFile = "Sprites/Background";
+        private const string BagBGFile = "Sprites/Background/Bag";
         
         public static Sprite BagFG { get; private set; }
-        private const string BagFGFile = "Sprites/Foreground";
+        private const string BagFGFile = "Sprites/Foreground/Bag";
 
         public static Sprite CardBG { get; private set; }
-        private const string CardBGFile = "Sprites/Cards/CardBG";
+        private const string CardBGFile = "Sprites/Cards/CardBackground";
+
 
         public static Sprite AspectDad { get; private set; }
         private const string AspectDadFile = "Sprites/Cards/Aspects/Dad";
+
+        public static Sprite AspectBad { get; private set; }
+        private const string AspectBadFile = "Sprites/Cards/Aspects/Joker";
+
+        public static Sprite AspectMom { get; private set; }
+        private const string AspectMomFile = "Sprites/Cards/Aspects/Mom";
+
+        public static Sprite AspectPun { get; private set; }
+        private const string AspectPunFile = "Sprites/Cards/Aspects/Pun";
+
+        public static Sprite AspectRussia { get; private set; }
+        private const string AspectRussiaFile = "Sprites/Cards/Aspects/Russia";
+
 
         public static Sprite[] MonsterMinotaur { get; private set; }
         private const string MonseterMinotaurFile = "Sprites/Monsters/Minotaur";
@@ -32,9 +49,14 @@ namespace JokeToKill
         {
             CardFont = content.Load<SpriteFont>(CardFontFile);
 
+            SceneBG = Loader.Load(SceneBGFile)[0];
             BagBG = Loader.Load(BagBGFile)[0];
             BagFG = Loader.Load(BagFGFile)[0];
             AspectDad = Loader.Load(AspectDadFile)[0];
+            AspectBad = Loader.Load(AspectBadFile)[0];
+            AspectMom = Loader.Load(AspectMomFile)[0];
+            AspectPun = Loader.Load(AspectPunFile)[0];
+            AspectRussia = Loader.Load(AspectRussiaFile)[0];
             CardBG = Loader.Load(CardBGFile)[0];
             MonsterMinotaur = Loader.Load(MonseterMinotaurFile, 
                 ArrayExtensions.Fill(new Rectangle[8], Slice(new Point(8 * 69, 96), new Point(1, 0), 8)));

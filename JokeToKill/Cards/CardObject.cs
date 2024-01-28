@@ -44,14 +44,14 @@ namespace JokeToKill.Cards
                 localScale: cardSize * new Vector2(0.9f, 0.45f), 
                 localPosition: new Vector2(0f, cardSize.Y / 2f));
             
-            descBG = this.CreateDrawableChild(Sprite.Unlit, color: Color.Gray, drawOrder: drawOrder + 0.01f,
+            /*descBG = this.CreateDrawableChild(Sprite.Unlit, color: Color.Gray, drawOrder: drawOrder + 0.01f,
                 localScale: cardSize * new Vector2(0.9f, 0.45f),
-                localPosition: new Vector2(0f, -cardSize.Y / 2f));
+                localPosition: new Vector2(0f, -cardSize.Y / 2f));*/
 
             desc = new DrawableTextObject(pipeline, Color.White, drawOrder + 0.02f);
             desc.Font = Sprites.CardFont;
-            desc.Transform.LocalPosition = new Vector2(-0.9f, 0.9f);
-            desc.Parent = descBG;
+            desc.Transform.LocalPosition = new Vector2(-0.9f, 0.8f);
+            desc.Parent = this;
 
             aspects = new DrawableObject[3];
             var offset = new Vector2(0f, -cardSize.Y / 5);
@@ -130,7 +130,7 @@ namespace JokeToKill.Cards
         {
             background.DrawOrder = drawOrder;
             foreground.DrawOrder = drawOrder;// + 0.01f;
-            descBG.DrawOrder = drawOrder;// + 0.01f;
+            //descBG.DrawOrder = drawOrder;// + 0.01f;
             desc.DrawOrder = drawOrder;// + 0.02f;
             foreach (var aspect in aspects)
             {
@@ -141,7 +141,7 @@ namespace JokeToKill.Cards
         public void Update(GameTime time)
         {
             background.Color = Color.White * Fade;
-            descBG.Color = Color.Gray * Fade;
+            //descBG.Color = Color.Gray * Fade;
             foreground.Color = Color.White * Fade;
             desc.Color = new Color(0xff101010) * Fade;
             if (currentCard != null)
