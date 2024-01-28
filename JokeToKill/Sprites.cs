@@ -49,6 +49,9 @@ namespace JokeToKill
         public static Sprite[] MonsterMinotaur { get; private set; }
         private const string MonseterMinotaurFile = "Sprites/Monsters/Minotaur";
 
+        public static Sprite[] MonsterCthulhu { get; private set; }
+        private const string MonsterCthulhuFile = "Sprites/Monsters/Cthulu";
+
         public static void Init(ContentManager content, SpriteAtlasLoader<Color> Loader)
         {
             CardFont = content.Load<SpriteFont>(CardFontFile);
@@ -66,6 +69,8 @@ namespace JokeToKill
             CardBG = Loader.Load(CardBGFile)[0];
             MonsterMinotaur = Loader.Load(MonseterMinotaurFile, 
                 ArrayExtensions.Fill(new Rectangle[8], Slice(new Point(8 * 69, 96), new Point(1, 0), 8)));
+            MonsterCthulhu = Loader.Load(MonsterCthulhuFile,
+                ArrayExtensions.Fill(new Rectangle[6], Slice(new Point(6 * 57, 92), new Point(1, 0), 6)));
         }
 
         public static Vector2 GetSpriteSize(Sprite sprite)

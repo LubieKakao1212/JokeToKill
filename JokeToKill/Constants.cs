@@ -24,6 +24,7 @@ namespace JokeToKill
         public const int MinMonsterAspects = 2;
         public const int MaxMonsterAspects = 5;
         public const int CardAspects = 2;
+        public const int MonsterCount = 3;
 
         private static float GetPart(float total, int count, float spacing)
         {
