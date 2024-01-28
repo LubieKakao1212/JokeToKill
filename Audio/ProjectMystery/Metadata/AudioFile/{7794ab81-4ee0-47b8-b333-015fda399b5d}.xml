@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7794ab81-4ee0-47b8-b333-015fda399b5d}">
+		<property name="assetPath">
+			<value>(Soviet) Jok.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>7.6799999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{673fa982-c966-48da-a1a4-bff6f9b5cc36}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -40,7 +40,7 @@ namespace JokeToKill.Combat
             mainSprite.Transform.GlobalPosition = new Vector2(Constants.MonsterFloorCenter.X, Constants.MonsterFloorCenter.Y + size.Y);
             
             aspectSprites = new DrawableObject[Constants.MaxMonsterAspects];
-            var offset = new Vector2(0f, -size.Y / 5);
+            var offset = new Vector2(0f, -size.Y / 10);
 
             for (int i = 0; i < aspectSprites.Length; i++)
             {
@@ -100,7 +100,7 @@ namespace JokeToKill.Combat
             }
         }
 
-        private void SetAspect(int i, Aspect aspect)
+        public void SetAspect(int i, Aspect aspect)
         {
             aspectSprites[i].Sprite = aspect.Icon;
             aspectSprites[i].Color = aspect.Tint;
