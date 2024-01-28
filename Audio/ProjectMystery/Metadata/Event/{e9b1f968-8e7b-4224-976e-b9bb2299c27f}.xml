@@ -131,6 +131,9 @@
 		<property name="threshold">
 			<value>-27.5</value>
 		</property>
+		<property name="gain">
+			<value>8.5</value>
+		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{e742d45d-67d8-4854-99a1-c0232e87e082}">
 		<property name="decayTime">
