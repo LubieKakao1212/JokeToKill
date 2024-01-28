@@ -11,7 +11,7 @@ namespace JokeToKill
     {
         private static FSoundBank bank;
 
-        private static FSound bee2;
+        public static FSound bee2;
         private static FSound phrog;
         private static FSound wasser;
         private static FSound alike;
@@ -21,10 +21,10 @@ namespace JokeToKill
         {
             bank = fmod.LoadBank("bank");
             bee2 = bank.GetSound("event:/Voice/(dad)(pun) 2bee");
-            phrog = bank.GetSound("event:/Voice/(dad) phrog");
-            wasser = bank.GetSound("event:/Voice/(dad)(pun) Wasser");
-            alike = bank.GetSound("event:/Voice/(MoM)(Dad) alike");
-            sis = bank.GetSound("event:/Voice/(MoM)(Pun) sis");
+            //phrog = bank.GetSound("event:/Voice/(dad) phrog");
+            //wasser = bank.GetSound("event:/Voice/(dad)(pun) Wasser");
+            //alike = bank.GetSound("event:/Voice/(MoM)(Dad) alike");
+            //sis = bank.GetSound("event:/Voice/(MoM)(Pun) sis");
 
         }
     }

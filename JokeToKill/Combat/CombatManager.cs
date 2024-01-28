@@ -1,7 +1,10 @@
 ﻿using Custom2d_Engine.Scenes;
+using Custom2d_Engine.Ticking;
+using JokeToKill.Cards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,17 +15,28 @@ namespace JokeToKill.Combat
         public static int PlayerHealth = 100;
         static MonstersManager monsterObject;
         static Random random = new Random();
+        private static CardsObject cards;
 
-        public static void InitCM(Hierarchy hierarchy)
+        public static void InitCM(Hierarchy hierarchy, CardsObject cards)
         {
             monsterObject = new MonstersManager(hierarchy);
             monsterObject.ChangeMonster(1);
+            CombatManager.cards = cards;
         }
 
         public static void HandleCardPlayed(Cards.Card card)
         {
-            EliminateCommonAspects(card.aspects, 
+            cards.Frozen = true;
+            cards.AddActionSequence(HandlePlay(card));
+        }
+
+        public static IEnumerator<TimeSpan> HandlePlay(Card card)
+        {
+            card.voice.CreateInstance().Start();
+            yield return card.voice.Duration;
+            yield return EliminateCommonAspects(card.aspects,
                 monsterObject.monsters[monsterObject.active]);
+            cards.Frozen = false;
         }
 
         public static void AnimateCardPlayed()
@@ -30,7 +44,7 @@ namespace JokeToKill.Combat
 
         }
 
-        private static void EliminateCommonAspects(Aspect[] cardA, MonsterInstance monster)
+        private static TimeSpan EliminateCommonAspects(Aspect[] cardA, MonsterInstance monster)
         {
             var monsterA = monster.aspects;
             for(int i = 0; i < cardA.Length; i++)
@@ -62,7 +76,11 @@ namespace JokeToKill.Combat
                 // what to do when monster is kill
                 Console.Out.WriteLine("Monster is kill");
                 monsterObject.ChangeMonster(random.Next(0, 2));
+                monsterObject.PlayDeath();
+
+                return TimeSpan.FromSeconds(1f);
             }
+            return TimeSpan.Zero;
         }
     }
 }

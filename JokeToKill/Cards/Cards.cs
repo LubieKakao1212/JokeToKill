@@ -47,8 +47,8 @@ namespace JokeToKill.Cards
             Dad2 = new Card("Electric bogaloo", Sprite.Empty, Aspects.Dad, Aspects.Sad);
             Dad3 = new Card("Enigma", Sprite.Empty, Aspects.Sad);*/
 
-            DadJoke_1 = new Card("Dad1", Sprite.Empty, Aspects.Daddy);
-            DadJoke_2 = new Card("Dad2", Sprite.Empty, Aspects.Daddy);
+            DadJoke_1 = new Card("Dad1", Sprite.Empty, Sounds.bee2, Aspects.Daddy);
+            /*DadJoke_2 = new Card("Dad2", Sprite.Empty, Aspects.Daddy);
             DadJoke_3 = new Card("Dad3", Sprite.Empty, Aspects.Daddy);
             DadJoke_4 = new Card("Dad4", Sprite.Empty, Aspects.Daddy);
 
@@ -65,13 +65,13 @@ namespace JokeToKill.Cards
             Pun_1 = new Card("Pun1", Sprite.Empty, Aspects.Pun);
             Pun_2 = new Card("Pun2", Sprite.Empty, Aspects.Pun);
             Pun_3 = new Card("Pun3", Sprite.Empty, Aspects.Pun);
-            Pun_4 = new Card("Pun4", Sprite.Empty, Aspects.Pun);
+            Pun_4 = new Card("Pun4", Sprite.Empty, Aspects.Pun);*/
 
             AllCards = new Card[] { 
-            DadJoke_1, DadJoke_2, DadJoke_3, DadJoke_4,
+            DadJoke_1, /*DadJoke_2, DadJoke_3, DadJoke_4,
             YoMama_1, YoMama_2, YoMama_3, YoMama_4,
             Soviet_1, Soviet_2, Soviet_3, Soviet_4,
-            Pun_1, Pun_2, Pun_3, Pun_4};
+            Pun_1, Pun_2, Pun_3, Pun_4*/};
         }
     }
 }

@@ -20,17 +20,23 @@ namespace JokeToKill.Combat
         public Aspect[] aspects;
         public bool isAlive;
         private Sprite[] animationFrames;
+        private Sprite dead;
         private Aspect[] aspectPool;
 
         private DrawableObject mainSprite;
+        private DrawableObject deadSprite;
 
         private DrawableObject[] aspectSprites;
 
-        public MonsterInstance(string name, Sprite[] animationFrames, params Aspect[] aspectPool)
+        public MonsterInstance(string name, Sprite[] animationFrames, Sprite dead, params Aspect[] aspectPool)
         {
             this.name = name;
             aspects = new Aspect[Constants.MaxMonsterAspects];
             this.animationFrames = animationFrames;
+
+            this.dead = dead;
+            deadSprite = this.CreateDrawableChild(dead, localScale: Sprites.GetSpriteSize(dead) * 2f);
+
 
             this.aspectPool = aspectPool;
 
@@ -79,6 +85,8 @@ namespace JokeToKill.Combat
         public void Animate()
         {
             var frame = new Reference<int>();
+            mainSprite.Color = Color.White;
+            deadSprite.Color = Color.Transparent;
             this.AddAccurateRepeatingAction(() =>
             {
                 mainSprite.Sprite = animationFrames[frame.Value = (frame + 1) % animationFrames.Length];
@@ -107,5 +115,13 @@ namespace JokeToKill.Combat
             aspectSprites[i].Transform.LocalScale = Sprites.GetSpriteSize(aspect.Icon);
             aspects[i] = aspect;
         }
+
+        public void PlayDead() 
+        {
+            //CurrentHierarchy.TickManager.RemoveAllTickers(this);
+            deadSprite.Color = Color.White;
+            mainSprite.Color = Color.Transparent;
+        }
+
     }
 }
