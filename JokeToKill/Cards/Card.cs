@@ -1,4 +1,5 @@
-﻿using Custom2d_Engine.Rendering.Sprites;
+﻿using Custom2d_Engine.FMOD_Audio;
+using Custom2d_Engine.Rendering.Sprites;
 using JokeToKill.Combat;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,14 @@ namespace JokeToKill.Cards
         public Aspect[] aspects;
         public string description;
         public Sprite sprite;
+        public FSound voice;
 
-        public Card(string description, Sprite sprite, params Aspect[] aspects)
+        public Card(string description, Sprite sprite, FSound voice, params Aspect[] aspects)
         {
             this.aspects = aspects;
             this.description = description;
             this.sprite = sprite;
+            this.voice = voice;
         }
     }
 }

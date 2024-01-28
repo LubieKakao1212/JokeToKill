@@ -13,6 +13,15 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin ../../Audio/ProjectMystery/Build/Desktop/bank.bank
+/copy:../../Audio/ProjectMystery/Build/Desktop/bank.bank;Banks/bank.bank
+
+#begin ../../Audio/ProjectMystery/Build/Desktop/Master.bank
+/copy:../../Audio/ProjectMystery/Build/Desktop/Master.bank;Banks/Master.bank
+
+#begin ../../Audio/ProjectMystery/Build/Desktop/Master.strings.bank
+/copy:../../Audio/ProjectMystery/Build/Desktop/Master.strings.bank;Banks/Master.strings.bank
+
 #begin ../../Custom2D-Engine/Shaders/Default.fx
 /importer:EffectImporter
 /processor:EffectProcessor
