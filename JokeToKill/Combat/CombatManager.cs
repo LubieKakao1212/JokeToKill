@@ -22,11 +22,17 @@ namespace JokeToKill.Combat
         public static void HandleCardPlayed(Cards.Card card)
         {
             EliminateCommonAspects(card.aspects, 
-                monsterObject.monsters[monsterObject.active].aspects);
+                monsterObject.monsters[monsterObject.active]);
         }
 
-        private static void EliminateCommonAspects(Aspect[] cardA, Aspect[] monsterA)
+        public static void AnimateCardPlayed()
         {
+
+        }
+
+        private static void EliminateCommonAspects(Aspect[] cardA, MonsterInstance monster)
+        {
+            var monsterA = monster.aspects;
             for(int i = 0; i < cardA.Length; i++)
             {
                 for(int j = 0; j < monsterA.Length; j++)
@@ -34,7 +40,7 @@ namespace JokeToKill.Combat
                     if (cardA[i] == monsterA[j] && monsterA[j] != Aspects.NULL
                         && cardA[i] != Aspects.NULL)
                     {
-                        monsterA[j] = Aspects.NULL;
+                        monster.SetAspect(j, Aspects.NULL);//.Equals// = ;
                         Console.Out.WriteLine("Aspect was deleted");
                         break;
                     }
