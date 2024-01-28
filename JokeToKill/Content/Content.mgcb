@@ -37,36 +37,24 @@
 /processorParam:DebugMode=Auto
 /build:../../Custom2D-Engine/Shaders/Tilemap.fx;Tilemap.fx
 
-#begin ../../Graphics/Background_Bag.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Graphics/Background_Bag.png;Sprites/Background/Bag/albedo.png
-
-#begin ../../Graphics/Foreground_Bag.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../../Graphics/Foreground_Bag.png;Sprites/Foreground/Bag/albedo.png
-
 #begin CardsFont.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:CardsFont.spritefont
+
+#begin Sprites/Background/BattleBackGround/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Background/BattleBackGround/albedo.png
 
 #begin Sprites/Background/BlackStripe/albedo.png
 /importer:TextureImporter
@@ -80,6 +68,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Background/BlackStripe/albedo.png
 
+#begin Sprites/Background/MonsterFloor/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Background/MonsterFloor/albedo.png
+
 #begin Sprites/Cards/Aspects/Dad/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -91,6 +91,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Cards/Aspects/Dad/albedo.png
+
+#begin Sprites/Cards/Aspects/Dad/emit.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Cards/Aspects/Dad/emit.png
 
 #begin Sprites/Cards/Aspects/Joker/albedo.png
 /importer:TextureImporter
@@ -152,6 +164,30 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Cards/CardBackground/albedo.png
 
+#begin Sprites/HPBar/BG/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/HPBar/BG/albedo.png
+
+#begin Sprites/HPBar/FG/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/HPBar/FG/albedo.png
+
 #begin Sprites/Monsters/Burger/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -164,7 +200,7 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Monsters/Burger/albedo.png
 
-#begin Sprites/Monsters/Minotaur/albedo.png
+#begin Sprites/Monsters/Mintour/emit.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -174,7 +210,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/Monsters/Minotaur/albedo.png
+/build:Sprites/Monsters/Mintour/emit.png
 
 #begin Sprites/Player/albedo.png
 /importer:TextureImporter
