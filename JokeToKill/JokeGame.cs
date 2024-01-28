@@ -1,4 +1,5 @@
-﻿using Custom2d_Engine.Input;
+﻿using Custom2d_Engine.FMOD_Audio;
+using Custom2d_Engine.Input;
 using Custom2d_Engine.Math;
 using Custom2d_Engine.Rendering;
 using Custom2d_Engine.Rendering.Sprites;
@@ -33,6 +34,7 @@ namespace JokeToKill
         private Camera Camera;
         private World PhysicsWorld;
         private InputManager InputManager;
+        private FMODSystem FMOD;
 
         public JokeGame()
         {
@@ -70,6 +72,7 @@ namespace JokeToKill
             RenderPipeline.Init(GraphicsDevice, ScreenWidth, ScreenHeight);
             TickManager = new TickManager();
             InputManager = new InputManager(Window);
+            LoadAudio();
         }
 
         private void LoadSprites()
@@ -89,6 +92,14 @@ namespace JokeToKill
             SpriteAtlas.Compact();
             var textures = SpriteAtlas.AtlasTextures;
             RenderPipeline.SetLitAtlases(textures[0], textures[1], textures[2]);
+        }
+
+        private void LoadAudio()
+        {
+            FMOD = new FMODSystem();
+            FMOD.RootDirectory = Content.RootDirectory + "/Banks";
+            FMOD.LoadMaster();
+            Sounds.Init(FMOD);
         }
 
         private void LoadTMX(SpriteAtlasLoader<Color> SALoader)
@@ -140,6 +151,7 @@ namespace JokeToKill
 
             TickManager.Forward(gameTime.ElapsedGameTime);
             PhysicsWorld.Step(gameTime.ElapsedGameTime);
+            FMOD.Update();
 
             base.Update(gameTime);
         }
@@ -149,6 +161,12 @@ namespace JokeToKill
             RenderPipeline.RenderScene(MainHierarchy, Camera, Color.DarkGray);
 
             base.Draw(gameTime);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            FMOD.Dispose();
         }
     }
 }
