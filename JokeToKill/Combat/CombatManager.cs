@@ -10,12 +10,12 @@ namespace JokeToKill.Combat
     public static class CombatManager
     {
         public static int PlayerHealth = 100;
-        static MonsterObject monsterObject;
+        static MonstersManager monsterObject;
         static Random random = new Random();
 
         public static void InitCM(Hierarchy hierarchy)
         {
-            monsterObject = new MonsterObject(hierarchy);
+            monsterObject = new MonstersManager(hierarchy);
             monsterObject.ChangeMonster(1);
         }
 

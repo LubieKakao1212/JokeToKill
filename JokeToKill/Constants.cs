@@ -11,6 +11,8 @@ namespace JokeToKill
         public const float CamSize = 5;
         public static readonly Vector2 ScreenSize = new Vector2(JokeGame.ScreenWidth, JokeGame.ScreenHeight);
 
+        public static readonly Vector2 MonsterFloorCenter = new Vector2(2.5f, -0.65f);
+
         public const float Aspect = JokeGame.ScreenWidth / (float)JokeGame.ScreenHeight;
         public static readonly Vector2 AspectVec = new Vector2(Aspect, 1f);
         public static readonly Vector2 Pixel = Vector2.One * (CamSize * 2f / JokeGame.ScreenHeight);
@@ -19,7 +21,8 @@ namespace JokeToKill
 
         public const float CardDrawOrder = 1f;
 
-        public const int MonsterAspects = 2;
+        public const int MinMonsterAspects = 2;
+        public const int MaxMonsterAspects = 2;
         public const int CardAspects = 2;
 
         private static float GetPart(float total, int count, float spacing)

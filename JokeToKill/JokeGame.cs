@@ -114,12 +114,6 @@ namespace JokeToKill
             
             MainHierarchy.AddObject(Camera);
 
-            MainHierarchy.AddObject(new GlobalLight(RenderPipeline, Color.White, 0f)
-            {
-                Intensity = 1.9f,
-                LightHeight = 10000f
-            });
-
             var scenery = new SceneryObject();
             MainHierarchy.AddObject(scenery);
 

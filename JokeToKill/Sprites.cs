@@ -20,11 +20,16 @@ namespace JokeToKill
         private const string BagBGFile = "Sprites/Background/BagBG";
         
         public static Sprite BagFG { get; private set; }
-        private const string BagFGFile = "Sprites/Foreground/BagFG";
+        private const string BagFGFile = "Sprites/Background/BagFG";
+
+        public static Sprite BattleBG { get; private set; }
+        private const string BattleBGFile = "Sprites/Background/BattleBackGround";
+
+        public static Sprite MonsterFloor { get; private set; }
+        private const string MonsterFloorFile = "Sprites/Background/MonsterFloor";
 
         public static Sprite CardBG { get; private set; }
         private const string CardBGFile = "Sprites/Cards/CardBackground";
-
 
         public static Sprite AspectDad { get; private set; }
         private const string AspectDadFile = "Sprites/Cards/Aspects/Dad";
@@ -40,8 +45,7 @@ namespace JokeToKill
 
         public static Sprite AspectRussia { get; private set; }
         private const string AspectRussiaFile = "Sprites/Cards/Aspects/Russia";
-
-
+        
         public static Sprite[] MonsterMinotaur { get; private set; }
         private const string MonseterMinotaurFile = "Sprites/Monsters/Minotaur";
 
@@ -52,6 +56,8 @@ namespace JokeToKill
             SceneBG = Loader.Load(SceneBGFile)[0];
             BagBG = Loader.Load(BagBGFile)[0];
             BagFG = Loader.Load(BagFGFile)[0];
+            BattleBG = Loader.Load(BattleBGFile)[0];
+            MonsterFloor = Loader.Load(MonsterFloorFile)[0];
             AspectDad = Loader.Load(AspectDadFile)[0];
             AspectBad = Loader.Load(AspectBadFile)[0];
             AspectMom = Loader.Load(AspectMomFile)[0];
