@@ -20,7 +20,7 @@ namespace JokeToKill
         public static void Init(FMODSystem fmod)
         {
             bank = fmod.LoadBank("bank");
-            bee2 = bank.GetSound("event:/Voice/(dad)(pun) 2bee");
+            //bee2 = bank.GetSound("event:/Voice/(dad)(pun) 2bee");
             //phrog = bank.GetSound("event:/Voice/(dad) phrog");
             //wasser = bank.GetSound("event:/Voice/(dad)(pun) Wasser");
             //alike = bank.GetSound("event:/Voice/(MoM)(Dad) alike");
