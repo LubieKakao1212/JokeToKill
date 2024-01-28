@@ -68,6 +68,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Background/BlackStripe/albedo.png
 
+#begin Sprites/Background/MonsterFloor/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Background/MonsterFloor/albedo.png
+
 #begin Sprites/Cards/Aspects/Dad/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -79,18 +91,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Cards/Aspects/Dad/albedo.png
-
-#begin Sprites/Cards/Aspects/Dad/emit.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Cards/Aspects/Dad/emit.png
 
 #begin Sprites/Cards/Aspects/Dad/emit.png
 /importer:TextureImporter
