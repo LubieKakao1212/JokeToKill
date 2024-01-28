@@ -92,18 +92,6 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Cards/Aspects/Dad/albedo.png
 
-#begin Sprites/Cards/Aspects/Dad/emit.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Sprites/Cards/Aspects/Dad/emit.png
-
 #begin Sprites/Cards/Aspects/Joker/albedo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -200,6 +188,18 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Monsters/Burger/albedo.png
 
+#begin Sprites/Monsters/Minotaur/albedo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Sprites/Monsters/Minotaur/albedo.png
+
 #begin Sprites/Monsters/Mintour/emit.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -210,7 +210,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Sprites/Monsters/Mintour/emit.png
+/build:Sprites/Monsters/Mintour/emit.png;Sprites/Monsters/Mintour/albedo.png
 
 #begin Sprites/Player/albedo.png
 /importer:TextureImporter
