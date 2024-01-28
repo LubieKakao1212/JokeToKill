@@ -17,10 +17,10 @@ namespace JokeToKill
         private const string SceneBGFile = "Sprites/Background/BlackStripe";
 
         public static Sprite BagBG { get; private set; }
-        private const string BagBGFile = "Sprites/Background/Bag";
+        private const string BagBGFile = "Sprites/Background/BagBG";
         
         public static Sprite BagFG { get; private set; }
-        private const string BagFGFile = "Sprites/Foreground/Bag";
+        private const string BagFGFile = "Sprites/Foreground/BagFG";
 
         public static Sprite CardBG { get; private set; }
         private const string CardBGFile = "Sprites/Cards/CardBackground";
